@@ -194,10 +194,10 @@ This project will help you learn about :
 - Manipulation of structures.
 - [Net-Cat](https://www.commandlinux.com/man-page/man1/nc.1.html)
 - TCP/UDP
-- - TCP/UDP connection
-- - TCP/UDP socket
+  - TCP/UDP connection
+  - TCP/UDP socket
 - [Go concurrency](https://go.dev/doc/#go_concurrency_patterns)
-- - [Channels](https://go.dev/tour/concurrency/2)
-- - [Goroutines](https://go.dev/tour/concurrency/1)
+  - [Channels](https://go.dev/tour/concurrency/2)
+  - [Goroutines](https://go.dev/tour/concurrency/1)
 - Mutexes
 - IP and [ports](https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers)
