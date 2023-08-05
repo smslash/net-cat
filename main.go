@@ -14,5 +14,8 @@ func main() {
   if err != nil {
     return
   }
-  go live()
+
+  for {
+    go live()
+  }
 }
