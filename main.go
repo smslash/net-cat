@@ -11,4 +11,8 @@ func main() {
     port = os.Args[1]
   }
   listen, err := net.Listen("tcp", "localhost:"+port)
+  if err != nil {
+    return
+  }
+  go live()
 }
