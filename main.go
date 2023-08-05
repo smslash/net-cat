@@ -16,7 +16,10 @@ func main() {
   }
   
   for {
-    conn := listen.Accept()
+    conn, err := listen.Accept()
+    if err != nil {
+      return
+    }
     go live()
     conn.Close()
   }
