@@ -14,13 +14,15 @@ func main() {
   if err != nil {
     return
   }
-  
+
+  ch := make(chan string)
   for {
     conn, err := listen.Accept()
     if err != nil {
       return
     }
     go live()
+    fmt.Println(<-ch)
     conn.Close()
   }
 }
