@@ -56,7 +56,7 @@ Your project must work in a similar way that the original NetCat works, in other
 
 ## Usage
 
-```bash
+```console
 $ go run .
 Listening on the port :8989
 $ go run . 2525
@@ -68,7 +68,7 @@ $
 
 - You should answer the client with a linux logo and ask for their name, when connection is received
 
-```
+```console
 $ nc $IP $port
 Welcome to TCP-Chat!
          _nnnn_
@@ -94,20 +94,20 @@ _)      \.___.,|     .'
 
 The client :
 
-```bash
+```console
 $ nc $IP $port
 ```
 
 Server :
 
-```bash
+```console
 $ go run . 2525
 Listening on the port :2525
 ```
 
 Client1 (Yenlik):
 
-```
+```console
 $ nc localhost 2525
 Welcome to TCP-Chat!
          _nnnn_
@@ -148,7 +148,7 @@ Lee has left our chat...
 
 Client2 (Lee):
 
-```
+```console
 $ nc localhost 2525
 Yenliks-MacBook-Air:simpleTCPChat ybokina$ nc localhost 2525
 Yenliks-MacBook-Air:simpleTCPChat ybokina$ nc localhost 2525
