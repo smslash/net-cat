@@ -1,4 +1,4 @@
-package server
+package handle
 
 import (
 	"fmt"
@@ -8,7 +8,6 @@ import (
 	"syscall"
 
 	"github.com/smslash/net-cat/internal/entity"
-	"github.com/smslash/net-cat/internal/handle"
 )
 
 func Run(protocol, address string) error {
@@ -28,11 +27,19 @@ func Run(protocol, address string) error {
 			c <- false
 		}
 
+		file, err := os.OpenFile("config/history.txt", os.O_WRONLY|os.O_TRUNC, 0o644)
+		if err != nil {
+			fmt.Printf("Error during openning history.txt: %v\n", err)
+			return
+		}
+		defer file.Close()
+
 		fmt.Println("\nServer is closed")
 		c <- true
 	}()
 
 	fmt.Printf("The server is running on address %s\n", address)
+	go Broadcast()
 
 	for {
 		conn, err := listener.Accept()
@@ -49,7 +56,7 @@ func Run(protocol, address string) error {
 		}
 
 		go func() {
-			if err = handle.Client(conn); err != nil {
+			if err = Client(conn, &mu); err != nil {
 				fmt.Printf("Error during handling conn: %s\n", err)
 				os.Exit(1)
 			}

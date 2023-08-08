@@ -7,11 +7,11 @@ import (
 var Users = make(map[string]net.Conn)
 
 type User struct {
-	name string
-	conn net.Conn
+	Name string
+	Conn net.Conn
 }
 
 type Message struct {
-	author string
-	text   string
+	Author string
+	Text   string
 }

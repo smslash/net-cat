@@ -5,7 +5,7 @@ import (
 	"net"
 	"os"
 
-	"github.com/smslash/net-cat/internal/server"
+	"github.com/smslash/net-cat/internal/handle"
 )
 
 func main() {
@@ -21,7 +21,7 @@ func main() {
 	}
 
 	address := net.JoinHostPort(host, port)
-	if err := server.Run(protocol, address); err != nil {
+	if err := handle.Run(protocol, address); err != nil {
 		fmt.Printf("Error durig runnig server: %s\n", err)
 		return
 	}
